@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="node_modules/chart.js/dist/chart.umd.js"></script>
+  <script src="node_modules/axios/dist/axios.min.js"></script>
+  <script src="node_modules/papaparse/papaparse.min.js"></script>
+
+  <script src="assets/js/titanic.js"></script>
+  <script src="assets/js/chart.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+  <!-- // -->
+
+</head>
+
+<body>
+  <div class=" row  w-100 ">
+    <div class="col-2 bg-dark position-fixed  " style="height: 100vh;">
+      <h1 class="text-white text-center" style="font-family: initial;">Titanic</h1>
+      <ul class="navigation">
+        <li>
+          <a type="button"  class=" nav-link text-white" onclick="display('Chart')">Statistique</a>
+        </li>
+        <li>
+          <a type="button"  class="nav-link text-white " onclick="display('table')">Liste des passager</a>
+        </li>
+
+        <li>
+          <a type="button"  class="nav-link text-white " onclick="display('recherche1')">Recherche</a>
+        </li>
+      </ul>
+    </div>
+    <div class=" col-10 chart1 tab" style="margin-left: 5cm;" id="Chart">
+      
+      <div class="d-flex justify-content-center linkgraph bg-dark ms-5 w-100 border-4" style="height: max-content; border-radius: 40px;" >
+
+        <a type="button" class="nav-link "  onclick="dispayGraph('chart1')">Passager</a>
+        <a  type="button" class="nav-link"  onclick="dispayGraph('chart2')">Histogramme par age</a>
+        <a type="button"  class="nav-link"  onclick="dispayGraph('chart3')">Mortalité</a>
+      </div>
+      <div class="d-inline w-100"> 
+        <div class="graph w-100 fade-in-top" id="chart1">
+          <h3 class="text-center">Nombre homme et femme</h3>
+          <hr>
+          <div class="d-flex justify-content-center  w-100">
+            
+            <canvas id="myChart" class="w-75 h-75"></canvas>
+          </div>
+          
+        </div>
+        <div class="graph w-100 fade-in-top" id="chart2">
+          <h3 class="text-center">Histogramme par age des passagers</h3>
+          <hr>
+          <div class="d-flex justify-content-center  w-100">
+            
+            <canvas id="myChart1" class="w-50 h-50"></canvas>
+          </div>
+          
+        </div>
+
+        <div class="graph w-100 fade-in-top" id="chart3">
+          <h3 class="text-center">Mort</h3>
+          <hr>
+          <div class="d-flex justify-content-center  w-100">
+            
+            <canvas id="myChart2" class="w-75 h-75"></canvas>
+          </div>
+          
+        </div>
+      </div> 
+     
+      
+    </div>
+    <div class="col-10 tab w-100 " id="table">
+      <form action="" class="container  d-flex justify-content-center" id="form">
+        <div class=" w-100">
+          <div class="row d-flex justify-content-center mt-4">
+            <input type="text" placeholder="Rechercher"  id="filtre"  class="form-control w-50 col-10">
+            <input type="submit" value="Rechercher" class="btn btn-success col-2 ms-3" id="recherche" >
+          </div>
+      </form>
+      <div class="d-flex justify-content-center w-100 slide " style="margin-left: 3cm;">
+        <table class="table table-bordered" >
+          <thead>
+            <tr class="bg-dark text-white">
+              <th>Classe</th>
+              <th>Déclarer</th>
+              <th>Nom</th>
+              <th>Sexe</th>
+              <th>Age</th>
+            </tr>  
+          </thead>
+         
+  
+        </table>
+      </div>
+
+       
+      </div>
+      
+    </div>
+
+    <div class="col-10 tab" id="recherche1">
+      <form action="" class="container form">
+        <div class="row d-flex justify-content-center mt-4">
+          <input type="text" placeholder="Rechercher" name="" id="" class="form-control w-50 col-10">
+          <input type="submit" value="Rechercher" class="btn btn-success col-2 ms-3 recherche">
+        </div>
+      </form>
+      
+    </div>
+
+  </div>
+
+
+</body>
+
+<script src="assets/js/function.js"></script>
+<script src="assets/js/views.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/graph.js"></script>
+
+
+</html>
